@@ -10,7 +10,8 @@ func main() {
 	f := 12.9
 	fmt.Printf("value i : %d, vlue f : %f\n", i, f)
 	//fmt.Printf("%d * %f = %f\n", i, f, i*f)
-	fmt.Printf("%d * %f = %f\n", i, f, float64(i)*f) // conversion
-	fmt.Println(reflect.TypeOf(i))
+	//fmt.Printf("%d * %f = %f\n", i, f, float64(i)*f) // conversion
+	fmt.Printf("%d * %f = %d\n", i, f, i*int(f))
+	fmt.Println(reflect.TypeOf(i), reflect.TypeOf(f))
 
 }
