@@ -31,10 +31,12 @@ func main() {
 		j := 2
 		for j < n {
 			if n%j == 0 {
-				//counts++
 				isPrime = false // 더하기 연산 제거
+				break           // performance up
 			}
+			fmt.Printf("%d ", j) //check j loop
 			j++
+
 		}
 	}
 
