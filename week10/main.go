@@ -19,29 +19,28 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	i = strings.TrimSpace(i) // 줄바꿈등 제거. 파이썬의 strip 함수와 비슷
+	i = strings.TrimSpace(i)
 	n, err := strconv.Atoi(i)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	var isPrime bool = true // 가독성 up, 메모리 down
-
+	var isPrime bool = true
 	if n <= 1 {
 		isPrime = false
 	} else if n == 2 {
 		isPrime = true
-	} else if n%2 == 0 { // all even numbers except 2 are not prime.
+	} else if n%2 == 0 {
 		isPrime = false
-	} else {
-		j := 2
+	} else { // odd number
+		j := 3 // start number
 		for j <= int(math.Sqrt(float64(n))) {
 			if n%j == 0 {
-				isPrime = false // 더하기 연산 제거
-				break           // performance up
+				isPrime = false
+				break
 			}
-			fmt.Printf("%d ", j) //check j loop
-			j++
+			fmt.Printf("%d ", j)
+			j = j + 2
 
 		}
 	}
