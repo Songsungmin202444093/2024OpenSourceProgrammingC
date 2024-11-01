@@ -4,7 +4,6 @@ import (
 	"bufio"
 	"fmt"
 	"log"
-	"math"
 	"os"
 	"strconv"
 	"strings"
@@ -34,7 +33,8 @@ func main() {
 		isPrime = false
 	} else { // odd number
 		j := 3 // start number
-		for j <= int(math.Sqrt(float64(n))) {
+		// for j <= int(math.Sqrt(float64(n))) {
+		for j*j <= n {
 			if n%j == 0 {
 				isPrime = false
 				break
